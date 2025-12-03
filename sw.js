@@ -4,15 +4,15 @@ const CACHE_NAME = `fortune-learning-cache-${CACHE_VERSION}`;
 
 // 需要缓存的资源列表
 const urlsToCache = [
-    '/fortune-learning-pwa/',
-    '/fortune-learning-pwa/index.html',
-    '/fortune-learning-pwa/style.css',
-    '/fortune-learning-pwa/app.js',
-    '/fortune-learning-pwa/manifest.json',
-    '/fortune-learning-pwa/icons/icon-192.png',
-    '/fortune-learning-pwa/icons/icon-512.png',
-    '/fortune-learning-pwa/icons/apple-touch-icon.png',
-    '/fortune-learning-pwa/icons/favicon.ico'
+    '/ios-pwa-demo/',
+    '/ios-pwa-demo/index.html',
+    '/ios-pwa-demo/style.css',
+    '/ios-pwa-demo/app.js',
+    '/ios-pwa-demo/manifest.json',
+    '/ios-pwa-demo/icons/icon-192.png',
+    '/ios-pwa-demo/icons/icon-512.png',
+    '/ios-pwa-demo/icons/apple-touch-icon.png',
+    '/ios-pwa-demo/icons/favicon.ico'
 ];
 
 // 安装事件 - 预缓存关键资源
@@ -102,7 +102,7 @@ self.addEventListener('fetch', event => {
                         
                         // 对于HTML请求，返回离线页面
                         if (event.request.headers.get('accept').includes('text/html')) {
-                            return caches.match('/fortune-learning-pwa/index.html');
+                            return caches.match('/ios-pwa-demo/index.html');
                         }
                         
                         // 对于其他请求，可以返回自定义的离线响应
@@ -129,8 +129,8 @@ self.addEventListener('push', event => {
     
     const options = {
         body: event.data ? event.data.text() : '神秘学知识库有新内容更新！',
-        icon: '/fortune-learning-pwa/icons/icon-192.png',
-        badge: '/fortune-learning-pwa/icons/icon-192.png',
+        icon: '/ios-pwa-demo/icons/icon-192.png',
+        badge: '/ios-pwa-demo/icons/icon-192.png',
         vibrate: [100, 50, 100],
         data: {
             dateOfArrival: Date.now(),
@@ -159,7 +159,7 @@ self.addEventListener('notificationclick', event => {
                 }
                 // 否则打开新窗口
                 if (clients.openWindow) {
-                    return clients.openWindow('/fortune-learning-pwa/');
+                    return clients.openWindow('/ios-pwa-demo/');
                 }
             })
     );
