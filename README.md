@@ -26,12 +26,12 @@
 
 1. 克隆仓库：
 ```
-git clone https://github.com/你的用户名/fortune-learning-pwa.git
+git clone https://github.com/dyqian/ios-pwa-demo.git
 ```
 
 2. 进入项目目录：
 ```
-cd fortune-learning-pwa
+cd ios-pwa-demo
 ```
 
 3. 使用本地服务器运行（推荐使用Live Server扩展）：
