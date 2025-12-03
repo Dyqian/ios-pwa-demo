@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- PWA相关Meta标签 -->
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="description" content="探索塔罗牌与占星学的知识学习工具 - 了解历史与文化，而非预测未来">
+    
+    <!-- iOS特定Meta标签 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="神秘学知识库">
+    
+    <!-- 主清单 -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- iOS图标 -->
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    
+    <!-- 网站图标 -->
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+    
+    <!-- 样式 -->
+    <link rel="stylesheet" href="style.css">
+    
+    <title>神秘学知识库 - 学习工具</title>
+</head>
+<body>
+    <div class="app-container">
+        <!-- 安装提示横幅 -->
+        <div id="installBanner" class="install-banner">
+            <p>📱 想要更好的体验？将此应用添加到主屏幕！</p>
+            <button id="installBtn" class="install-btn">添加到主屏幕</button>
+            <button id="dismissBtn" class="dismiss-btn">稍后再说</button>
+        </div>
+
+        <!-- iOS提示（仅iOS设备显示） -->
+        <div id="iosInstallTip" class="ios-tip">
+            <p>📱 iOS用户：点击分享按钮 <span style="font-size:1.2em">⤴</span>，然后选择"添加到主屏幕"</p>
+            <button id="closeIosTip" class="close-btn">×</button>
+        </div>
+
+        <header class="app-header">
+            <div class="logo-container">
+                <div class="logo">🔮</div>
+                <h1>神秘学知识库</h1>
+            </div>
+            <p class="subtitle">探索符号背后的历史与文化</p>
+        </header>
+
+        <main class="main-content">
+            <section class="hero-section">
+                <h2>欢迎来到神秘学学习工具</h2>
+                <p>这不是一个占卜应用，而是一个<strong>教育工具</strong>，旨在帮助您了解塔罗牌、占星学等神秘学体系的历史、文化和符号意义。</p>
+            </section>
+
+            <div class="features-grid">
+                <div class="feature-card" onclick="showContent('tarot')">
+                    <div class="feature-icon">🃏</div>
+                    <h3>塔罗牌知识库</h3>
+                    <p>了解每张塔罗牌的历史起源、艺术演变和象征意义</p>
+                </div>
+
+                <div class="feature-card" onclick="showContent('astrology')">
+                    <div class="feature-icon">⭐</div>
+                    <h3>占星学指南</h3>
+                    <p>学习行星、宫位和相位的天文学背景与文化含义</p>
+                </div>
+
+                <div class="feature-card" onclick="showContent('symbols')">
+                    <div class="feature-icon">🔣</div>
+                    <h3>符号学词典</h3>
+                    <p>探索神秘学中常见符号的跨文化解读</p>
+                </div>
+
+                <div class="feature-card" onclick="showContent('quiz')">
+                    <div class="feature-icon">📝</div>
+                    <h3>知识测验</h3>
+                    <p>通过互动问答测试您的学习成果</p>
+                </div>
+            </div>
+
+            <section id="contentArea" class="content-area">
+                <div class="content-placeholder">
+                    <p>👆 点击上方卡片开始探索知识</p>
+                </div>
+            </section>
+
+            <!-- 演示内容（点击后显示） -->
+            <div id="tarotContent" class="content-hidden">
+                <h3>🃏 塔罗牌：愚者 (The Fool)</h3>
+                <div class="knowledge-card">
+                    <h4>历史起源</h4>
+                    <p>"愚者"牌最早出现在15世纪的意大利，最初是塔罗牌游戏中的一张普通牌。在文艺复兴时期，随着神秘学思想的兴起，它逐渐被赋予了哲学和象征意义。</p>
+                    
+                    <h4>符号解读</h4>
+                    <ul>
+                        <li>👜 行囊：代表过去的经验与潜力</li>
+                        <li>🐕 小狗：象征本能与忠诚</li>
+                        <li>🏔️ 悬崖：未知的旅程与冒险精神</li>
+                        <li>🌅 太阳：新的开始与无限可能</li>
+                    </ul>
+                    
+                    <h4>文化比较</h4>
+                    <p>在不同文化中，"愚者"原型常出现在神话和文学中，如《西游记》的孙悟空、《唐吉诃德》的主角，都体现了"无知者无畏"的智慧。</p>
+                </div>
+                <button onclick="closeContent()" class="back-btn">返回</button>
+            </div>
+
+            <!-- 占星学内容 -->
+            <div id="astrologyContent" class="content-hidden">
+                <h3>⭐ 黄道十二宫：历史演变</h3>
+                <div class="knowledge-card">
+                    <h4>巴比伦起源</h4>
+                    <p>现代占星学的星座体系可以追溯到公元前5世纪的古巴比伦。他们将黄道带分为12个相等的部分，每个部分以一个星座命名。</p>
+                    
+                    <h4>希腊化时期</h4>
+                    <p>希腊天文学家托勒密在《占星四书》中系统化了星座与性格的关联，将希腊神话融入星座解读。</p>
+                    
+                    <h4>现代天文学视角</h4>
+                    <p>由于岁差现象，现在的星座位置已与2000年前大不相同。这是一个了解古代天文观测的好例子。</p>
+                </div>
+                <button onclick="closeContent()" class="back-btn">返回</button>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p><strong>教育声明：</strong>本应用仅供学习神秘学历史与文化使用，不提供任何形式的占卜、预测或决策建议。</p>
+            <div class="app-info">
+                <p>版本: 1.0.0 | 离线可用</p>
+                <button onclick="clearCache()" class="cache-btn">清除缓存</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
